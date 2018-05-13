@@ -1,0 +1,8 @@
+secret-pillar
+formulas
+.idea
+.idea/*
+.idea/
+*.pyc
+*.swp
+*.private_key
