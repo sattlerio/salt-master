@@ -1,13 +1,8 @@
 salt:
   # Salt Master Config
   master:
-    interface: 10.0.127.54
+    interface: 172.31.27.44
     hash_type: sha256
-    aws_profile:
-      region: eu-west-1
-      message_format: json
-      key: NadSqCqkaqf7VbZp1BqZvwwFBnqbeTdmMeLdvC/j
-      keyid: AKIAIZ37SVPSPBKDFOFQ
     file_roots:
       base:
         - /srv/salt/states
@@ -29,22 +24,17 @@ salt:
   # Salt Minion Config
   minion:
     master: salt-master
-    aws_profile:
-      region: eu-west-1
-      message_format: json
-      key: NadSqCqkaqf7VbZp1BqZvwwFBnqbeTdmMeLdvC/j
-      keyid: AKIAIZ37SVPSPBKDFOFQ
     hash_type: sha256
     grains:
       roles:
         - salt-master
         - salt-minion
         - docker
-      public_ip: 54.154.135.125
-      private_ip: 10.0.127.54
+      public_ip: 54.77.37.39
+      private_ip: 172.31.27.44
       public_interface: eth0
-      icinga_dns: ip-10-0-127-54.eu-west-1.compute.internal
-      aws_instance_id: i-0b2f8b06b7ce6691a
+      icinga_dns: ip-172-31-27-44.eu-west-1.compute.internal
+      aws_instance_id: i-023d580ece161970f
       aws_region: eu-west-1
     mine_functions:
       public_ips:
