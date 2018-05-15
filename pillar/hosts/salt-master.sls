@@ -1,3 +1,5 @@
+{% include 'letsencrypt.sls' %}
+
 salt:
   # Salt Master Config
   master:
@@ -30,6 +32,8 @@ salt:
         - salt-master
         - salt-minion
         - docker
+        - web-apache2
+        - letsencrypt
       public_ip: 54.77.37.39
       private_ip: 172.31.27.44
       public_interface: eth0
@@ -52,3 +56,65 @@ salt_formulas:
       - salt-formula
       - apache-formula
       - docker-formula
+
+apache:
+  server: apache2
+  service: apache2
+  vhostdir: /etc/apache2/sites-available
+  confext: .conf
+  wwwdir: /var/www/html
+
+  sites:
+    salt.sattler.io:
+      enabled: True
+      template_file: salt://apache2/files/vhosts/https_reverse-proxy_ldap-auth_with-port80-redirect_letsencrypt.conf
+      interface: "*"
+      ServerName: salt.digifit.in
+      DocumentRoot: /var/www/html
+      ProxyPass: http://127.0.0.1:5002/
+      #SSLCertificateFile: /etc/letsencrypt/live/salt.digifit.in/fullchain.pem
+      #SSLCertificateKeyFile: /etc/letsencrypt/live/salt.digifit.in/privkey.pem
+      LDAPGroup: cn=deployer,ou=groups,dc=ldap,dc=sattler,dc=io
+    certs.sattler.io:
+      enabled: True
+      template_file: salt://apache2/files/vhosts/letsencrypt_only.conf
+      interface: "*"
+      ServerName: certs.sattler.io
+      DocumentRoot: False
+   {% set validation_only = ['ldap'] %}
+{% for d in validation_only %}
+    {{ d }}.sattler.io:
+      enabled: True
+      interface: "*"
+      template_file: salt://apache2/files/vhosts/letsencrypt_only.conf
+      ServerName: {{ d }}.digifit.in
+      DocumentRoot: False
+{% endfor %}
+  modules:
+    enabled:
+      - access_compat
+      - actions
+      - alias
+      - auth_basic
+      - authn_core
+      - authn_file
+      - authnz_ldap
+      - authz_core
+      - authz_host
+      - authz_user
+      - autoindex
+      - deflate
+      - dir
+      - env
+      - filter
+      - headers
+      - ldap
+      - mime
+      - negotiation
+      - proxy_http
+      - proxy
+      - rewrite
+      - setenvif
+      - socache_shmcb
+      - ssl
+      - status
