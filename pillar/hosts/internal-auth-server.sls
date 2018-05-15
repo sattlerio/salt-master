@@ -28,7 +28,7 @@ apache:
   sites:
     ldap.sattler.io:
       enabled: True
-      template_file: salt://apache2/files/vhosts/https_reverse-proxy_ldap_auth_with-port80-redirect.conf
+      template_file: salt://apache2/files/vhosts/https_reverse-proxy_ldap_auth_with-port80-redirect_letsencrypt.conf
       interface: "*"
       ServerName: ldap.sattler.io
       DocumentRoot: /usr/share/phpldapadmin/htdocs
