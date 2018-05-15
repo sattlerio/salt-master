@@ -1,0 +1,7 @@
+SHELL=/bin/bash
+MAILTO=
+{% set minute = 30 %}
+{%- for _id in ids %}
+{{ minute }} 2 * * 1 root certbot-auto --config /etc/letsencrypt/configs/{{ _id }}.ini certonly > /var/log/letsencrypt-{{ _id }}.log
+{%- set minute = minute + 1 %}
+{%- endfor %}
