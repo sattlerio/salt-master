@@ -35,6 +35,8 @@ apache:
       ExtraInclude: /etc/phpldapadmin/apache.conf
       AuthName: For Admins only
       LDAPGroup: cn=administrator,ou=groups,dc=ldap,dc=sattler,dc=io
+      SSLCertificateFile: /etc/letsencrypt/live/ldap.sattler.io/fullchain.pem
+      SSLCertificateKeyFile: /etc/letsencrypt/live/ldap.sattler.io/privkey.pem
 
 
   modules:
