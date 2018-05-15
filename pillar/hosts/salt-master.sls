@@ -69,7 +69,7 @@ apache:
       enabled: True
       template_file: salt://apache2/files/vhosts/https_reverse-proxy_ldap-auth_with-port80-redirect_letsencrypt.conf
       interface: "*"
-      ServerName: salt.digifit.in
+      ServerName: salt.sattler.io
       DocumentRoot: /var/www/html
       ProxyPass: http://127.0.0.1:5002/
       #SSLCertificateFile: /etc/letsencrypt/live/salt.digifit.in/fullchain.pem
@@ -87,7 +87,7 @@ apache:
       enabled: True
       interface: "*"
       template_file: salt://apache2/files/vhosts/letsencrypt_only.conf
-      ServerName: {{ d }}.digifit.in
+      ServerName: {{ d }}.sattler.io
       DocumentRoot: False
 {% endfor %}
   modules:
