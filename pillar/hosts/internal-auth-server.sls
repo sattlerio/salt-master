@@ -26,7 +26,7 @@ apache:
   wwwdir: /var/www/html
 
   sites:
-    ldap.virtuagym.com:
+    ldap.sattler.io:
       enabled: True
       template_file: salt://apache2/files/vhosts/https_reverse-proxy_ldap_auth_with-port80-redirect.conf
       interface: "*"
