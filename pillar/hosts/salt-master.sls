@@ -10,13 +10,13 @@ salt:
         - /srv/salt/states
     pillar_roots:
       base:
-        - /srv/salt-master/pillar
+        - /srv/salt/pillar
     engines_dirs:
-        - /srv/salt-master/engines
+        - /srv/salt/engines
     runner_dirs:
-        - /srv/salt-master/runners
+        - /srv/salt/runners
     module_dirs:
-        - /srv/salt-master/modules
+        - /srv/salt/modules
     rest_cherrypy:
       port: 5002
       host: 127.0.0.1
