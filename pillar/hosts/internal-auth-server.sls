@@ -8,6 +8,7 @@ salt:
         - salt-minion
         - web-apache2
         - ldap-server
+        - letsencrypt-slave
       public_ip: 34.242.137.137
       public_interface: eth0
       icinga_dns: ip-172-31-10-158.eu-west-1.compute.internal
