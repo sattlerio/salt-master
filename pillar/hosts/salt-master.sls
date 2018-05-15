@@ -72,8 +72,8 @@ apache:
       ServerName: salt.sattler.io
       DocumentRoot: /var/www/html
       ProxyPass: http://127.0.0.1:5002/
-      #SSLCertificateFile: /etc/letsencrypt/live/salt.digifit.in/fullchain.pem
-      #SSLCertificateKeyFile: /etc/letsencrypt/live/salt.digifit.in/privkey.pem
+      SSLCertificateFile: /etc/letsencrypt/live/salt.sattler.io/fullchain.pem
+      SSLCertificateKeyFile: /etc/letsencrypt/live/salt.sattler.io/privkey.pem
       LDAPGroup: cn=deployer,ou=groups,dc=ldap,dc=sattler,dc=io
     certs.sattler.io:
       enabled: True
