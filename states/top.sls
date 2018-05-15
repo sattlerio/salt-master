@@ -18,3 +18,9 @@ base:
   'roles:web-apache2':
     - match: grain
     - apache2
+  'roles:letsencrypt':
+    - match: grain
+    - letsencrypt
+  'roles:letsencrypt-slave':
+    - match: grain
+    - letsencrypt.slave
