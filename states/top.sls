@@ -12,3 +12,9 @@ base:
     - salt.master
     - salt.formulas
     - salt.api
+  'roles:ldap-server':
+    - match: grain
+    - openldap
+  'roles:web-apache2':
+    - match: grain
+    - apache2
