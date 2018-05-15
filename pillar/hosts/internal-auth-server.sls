@@ -57,7 +57,6 @@ apache:
       - headers
       - ldap
       - mime
-      - mpm_prefork
       - negotiation
       - php7.0
       - proxy_http
