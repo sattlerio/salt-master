@@ -31,6 +31,9 @@ base:
     - match: grain
     - docker
     - docker_io
+  'roles:jenkins-slave':
+    - match: grain
+    - jenkins.slave
   'roles:jenkins':
     - match: grain
     - jenkins
