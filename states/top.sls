@@ -15,6 +15,9 @@ base:
   'roles:ldap-server':
     - match: grain
     - openldap
+  'roles:openvpn-server':
+    - match: grain
+    - openvpn
   'roles:web-apache2':
     - match: grain
     - apache2
@@ -24,3 +27,10 @@ base:
   'roles:letsencrypt-slave':
     - match: grain
     - letsencrypt.slave
+  'roles:docker':
+    - match: grain
+    - docker
+    - docker_io
+{% for container in pillar.get('containers', []) %}
+    - {{ container }}
+{% endfor %}
