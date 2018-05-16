@@ -16,3 +16,6 @@ letsencrypt:
     vpn.sattler.io:
       domains: vpn.sattler.io
       webroot-path: /var/www/letsencrypt/vpn.sattler.io
+    jenkins.sattler.io:
+      domains: jenkins.sattler.io
+      webroot-path: /var/www/letsencrypt/jenkins.sattler.io
