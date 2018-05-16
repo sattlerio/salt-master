@@ -5,7 +5,7 @@ include:
 
 /srv/nginx/config/sites/{{ pillar.get("NGINX_DOMAIN") }}:
   file.managed:
-    - source: salt://containers/nginx/templates/nginix_site_with_reverse_proxy.conf
+    - source: salt://containers/nginx/templates/nginx_site_with_reverse_proxy.conf
     - template: jinja
     - require:
       - /srv/nginx/config/sites
