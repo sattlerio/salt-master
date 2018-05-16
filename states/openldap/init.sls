@@ -7,6 +7,12 @@ slapd:
     - watch:
       - file: /etc/default/slapd
 
+/etc/ldap/schema:
+  file.recurse:
+    - source: salt://openldap/schema
+    - include_empty: True
+    - clean: True
+
 /etc/default/slapd:
   file.managed:
     - source: salt://openldap/files/slapd.default

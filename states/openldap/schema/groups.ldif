@@ -1,0 +1,25 @@
+# GROUP ADMINISTRATOR ENTRY
+dn: cn=administrator,ou=groups,dc=ldap,dc=sattler,dc=io
+cn: administrator
+objectClass: groupOfUniqueNames
+uniquemember: cn=admin,dc=ldap,dc=sattler,dc=io
+
+# GROUP DEVELOPER ENTRY
+dn: cn=developer, ou=groups,dc=ldap,dc=sattler,dc=io
+cn: developer
+objectClass: groupOfUniqueNames
+uniquemember: cn=administrator,ou=groups,dc=ldap,dc=sattler,dc=io
+
+# GROUP DEPLOYER ENTRY
+dn: cn=deployer, ou=groups,dc=ldap,dc=sattler,dc=io
+cn: deployer
+objectClass: groupOfUniqueNames
+uniquemember: cn=administrator,ou=groups,dc=ldap,dc=sattler,dc=io
+uniquemember: cn=developer,ou=groups,dc=ldap,dc=sattler,dc=io
+
+# GROUP EMPLOYEE ENTRY
+dn: cn=employee, ou=groups,dc=ldap,dc=sattler,dc=io
+cn: employee
+objectClass: groupOfUniqueNames
+uniquemember: cn=administrator,ou=groups,dc=ldap,dc=sattler,dc=io
+uniquemember: cn=developer,ou=groups,dc=ldap,dc=sattler,dc=io
