@@ -19,7 +19,6 @@ salt:
         - mine_function: grains.get
         - public_ip
 
-OPENVPN_NGINX: False
 NGINX_DOMAIN: vpn.sattler.io
 NGINX_LDAP: True
 NGINX_LETSENCRYPT: True
