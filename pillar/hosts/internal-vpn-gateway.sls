@@ -18,3 +18,9 @@ salt:
       public_ips:
         - mine_function: grains.get
         - public_ip
+
+OPENVPN_NGINX: True
+NGINX_DOMAIN: vpn.sattler.io
+NGINX_LDAP: True
+NGINX_LETSENCRYPT: True
+NGINX_PROXY_PASS:  https://localhost:943;
