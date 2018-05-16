@@ -7,11 +7,14 @@ slapd:
     - watch:
       - file: /etc/default/slapd
 
-/etc/ldap/schema:
-  file.recurse:
-    - source: salt://openldap/schema
-    - include_empty: True
-    - clean: True
+/etc/ldap/schema/groups.ldif:
+  file.managed:
+    - source: salt://openldap/schema/groups.ldif
+
+/etc/ldap/schema/memberOf.ldif:
+  file.managed:
+    - source: salt://openldap/schema/memberOf.ldif
+
 
 /etc/default/slapd:
   file.managed:
