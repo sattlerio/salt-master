@@ -31,6 +31,9 @@ base:
     - match: grain
     - docker
     - docker_io
+  'roles:jenkins':
+    - match: grain
+    - jenkins
 {% for container in pillar.get('containers', []) %}
     - {{ container }}
 {% endfor %}

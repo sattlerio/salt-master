@@ -1,0 +1,5 @@
+SHELL=/bin/bash
+0 5 * * * root /usr/bin/docker rm $(/usr/bin/docker ps -q -f status=exited)
+15 5 * * * root /usr/bin/docker volume rm $(/usr/bin/docker volume ls -qf dangling=true)
+30 5 * * * root /usr/bin/docker rmi $(/usr/bin/docker images --filter "dangling=true" -q --no-trunc)
+
