@@ -8,7 +8,7 @@ salt:
         - salt-minion
         - letsencrypt-slave
         - docker
-        - openvpn
+        - openvpn-server
       public_ip: 34.252.178.55
       public_interface: eth0
       icinga_dns: ip-172-31-33-168.eu-west-1.compute.internal
