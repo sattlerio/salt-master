@@ -13,3 +13,6 @@ letsencrypt:
     ldap.sattler.io:
       domains: ldap.sattler.io
       webroot-path: /var/www/letsencrypt/ldap.sattler.io
+    vpn.sattler.io:
+      domains: vpn.sattler.io
+      webroot-path: /var/www/letsencrypt/vpn.sattler.io
