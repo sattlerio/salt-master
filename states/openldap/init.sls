@@ -15,6 +15,10 @@ slapd:
   file.managed:
     - source: salt://openldap/schema/memberOf.ldif
 
+/etc/ldap/addUser.sh:
+  file.managed:
+    - source: salt://openldap/files/adduser.sh
+
 
 /etc/default/slapd:
   file.managed:
