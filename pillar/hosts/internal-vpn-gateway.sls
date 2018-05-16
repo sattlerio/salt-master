@@ -22,4 +22,4 @@ salt:
 NGINX_DOMAIN: vpn.sattler.io
 NGINX_LDAP: True
 NGINX_LETSENCRYPT: True
-NGINX_PROXY_PASS:  https://localhost:943;
+NGINX_PROXY_PASS:  https://172.31.33.168:943
