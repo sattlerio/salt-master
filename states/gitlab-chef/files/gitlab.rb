@@ -1,4 +1,4 @@
-external_url 'git.digifit.in'
+external_url 'https://git.sattler.io'
 nginx['redirect_http_to_https'] = true
 nginx['ssl_certificate'] = "/etc/letsencrypt/live/git.sattler.io/fullchain.pem"
 nginx['ssl_certificate_key'] = "/etc/letsencrypt/live/git.sattler.io/privkey.pem"
