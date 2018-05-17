@@ -20,4 +20,4 @@ salt:
 POSTGRES_BIND_PORT: True
 
 containers:
-  - containers.postgres
+  - containers.nexus
