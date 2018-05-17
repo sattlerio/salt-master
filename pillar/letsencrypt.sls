@@ -22,3 +22,6 @@ letsencrypt:
     nexus.sattler.io:
       domains: nexus.sattler.io
       webroot-path: /var/www/letsencrypt/nexus.sattler.io
+    docker-builds.sattler.io:
+      domains: docker-builds.sattler.io
+      webroot-path: /var/www/letsencrypt/docker-builds.sattler.io
