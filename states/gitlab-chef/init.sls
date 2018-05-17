@@ -14,3 +14,9 @@ download gitlab:
     - unless: test -e /etc/apt/sources.list.d/gitlab_gitlab-ce.list
     - require:
       - pkg: 'gitlab dependencies'
+
+install gitlab-ce:
+  pkg:
+    - installed
+    - pkgs:
+      - gitlab-ce
