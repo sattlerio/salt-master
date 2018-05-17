@@ -22,6 +22,5 @@ jenkins:
         title: Jenkins CI Server
         service_name: jenkins
 
-h
   file.managed:
     - source: salt://jenkins/files/jenkins.default
