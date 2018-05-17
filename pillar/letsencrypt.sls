@@ -25,6 +25,6 @@ letsencrypt:
     docker-builds.sattler.io:
       domains: docker-builds.sattler.io
       webroot-path: /var/www/letsencrypt/docker-builds.sattler.io
-    git.sattler.io
+    git.sattler.io:
       domains: git.sattler.io
       webroot-path: /var/www/letsencrypt/git.sattler.io
