@@ -81,7 +81,7 @@ apache:
       interface: "*"
       ServerName: certs.sattler.io
       DocumentRoot: False
-   {% set validation_only = ['ldap', 'vpn', 'jenkins'] %}
+   {% set validation_only = ['ldap', 'vpn', 'jenkins', 'salt'] %}
 {% for d in validation_only %}
     {{ d }}.sattler.io:
       enabled: True

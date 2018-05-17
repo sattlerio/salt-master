@@ -19,3 +19,6 @@ letsencrypt:
     jenkins.sattler.io:
       domains: jenkins.sattler.io
       webroot-path: /var/www/letsencrypt/jenkins.sattler.io
+    nexus.sattler.io
+      domains: nexus.sattler.io
+      webroot-path: /var/www/letsencrypt/nexus.sattler.io
