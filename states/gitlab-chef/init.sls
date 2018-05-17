@@ -11,6 +11,6 @@ download gitlab:
   cmd.run:
     - name: curl -LO https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh && bash script.deb.sh
     - cwd: /tmp
-    - unless: test -e /usr/local/node-v7.2.0-linux-x64
+    - unless: test -e /etc/apt/sources.list.d/gitlab_gitlab-ce.list
     - require:
       - pkg: 'gitlab dependencies'
