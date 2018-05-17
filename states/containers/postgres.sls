@@ -12,7 +12,3 @@ postgresql container:
     - port_bindings:
       - 127.0.0.1:5432:5432
 {% endif %}
-    - __monitoring__:
-        - service: container-running
-          title: postgresql container
-          container_name: postgresql-{{ grains['id'] }}
