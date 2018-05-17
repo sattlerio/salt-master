@@ -9,6 +9,7 @@ salt:
         - web-apache2
         - jenkins
         - letsencrypt-slave
+        - docker
       public_ip: 34.249.96.85
       public_interface: eth0
       icinga_dns: ip-172-31-28-47.eu-west-1.compute.internal
@@ -19,6 +20,8 @@ salt:
         - mine_function: grains.get
         - public_ip
 
+containers:
+  - containers.nexus3
 
 apache:
   server: apache2
@@ -28,7 +31,7 @@ apache:
   wwwdir: /var/www/html
 
   sites:
-    jenkins.digifit.in:
+    jenkins.sattler.io:
       enabled: True
       template_file: salt://apache2/files/vhosts/https_reverse-proxy_ldap-auth_with-port80-redirect_letsencrypt.conf
       interface: "*"
@@ -37,6 +40,15 @@ apache:
       SSLCertificateFile: /etc/letsencrypt/live/jenkins.sattler.io/fullchain.pem
       SSLCertificateKeyFile: /etc/letsencrypt/live/jenkins.sattler.io/privkey.pem
       ProxyPass: http://127.0.0.1:8080/
+    nexus.sattler.io:
+      enabled: True
+      template_file: salt://apache2/files/vhosts/https_reverse-proxy_ldap-auth_with-port80-redirect_letsencrypt.conf
+      interface: "*"
+      ServerName: nexus.sattler.io
+      DocumentRoot: /var/www/html
+      SSLCertificateFile: /etc/letsencrypt/live/nexus.sattler.io/fullchain.pem
+      SSLCertificateKeyFile: /etc/letsencrypt/live/nexus.sattler.io/privkey.pem
+      ProxyPass: http://127.0.0.1:8081/
 
   modules:
     enabled:
