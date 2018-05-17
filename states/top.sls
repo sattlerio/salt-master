@@ -33,6 +33,9 @@ base:
   'roles:jenkins':
     - match: grain
     - jenkins
+  'roles:gitlab-chef':
+    - match: grain
+    - gitlab-chef
   'roles:docker':
     - match: grain
     - docker
