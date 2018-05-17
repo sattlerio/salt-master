@@ -22,3 +22,19 @@ install gitlab-ce:
       - gitlab-ce
     - require:
       - cmd: download gitlab
+
+'/etc/gitlab/gitlab.rb':
+  file.managed:
+    - chmod: 755
+    - template: jinja
+    - source: salt://gitlab-chef/files/gitlab.rb
+    - require:
+      - pkg: install gitlab-ce
+
+'/opt/gitlab/embedded/service/gitlab-rails/config/initializers/local.rb':
+  file.managed:
+    - chmod: 755
+    - template: jinja
+    - source: salt://gitlab-chef/files/local.rb
+    - require:
+      - pkg: install gitlab-ce
