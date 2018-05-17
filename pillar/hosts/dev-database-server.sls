@@ -17,7 +17,8 @@ salt:
         - mine_function: grains.get
         - public_ip
 
+containers:
+  - containers.nginx
+
 POSTGRES_BIND_PORT: True
 
-containers:
-  - containers.nexus3
