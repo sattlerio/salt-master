@@ -27,16 +27,19 @@ base:
   'roles:letsencrypt-slave':
     - match: grain
     - letsencrypt.slave
-  'roles:docker':
-    - match: grain
-    - docker
-    - docker_io
   'roles:jenkins-slave':
     - match: grain
     - jenkins.slave
   'roles:jenkins':
     - match: grain
     - jenkins
+  'roles:docker':
+    - match: grain
+    - docker
+    - docker_io
+{% for container in pillar.get('containers', []) %}
+    - {{ container }}
+{% endfor %}
 {% for container in pillar.get('containers', []) %}
     - {{ container }}
 {% endfor %}
