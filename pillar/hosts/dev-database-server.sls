@@ -18,7 +18,9 @@ salt:
         - public_ip
 
 POSTGRES_BIND_PORT: True
+MONGODB_BIND_PORT: True
 
 # Docker Containers
 containers:
   - containers.postgres
+  - containers.mongodb
