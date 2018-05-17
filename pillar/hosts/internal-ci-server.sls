@@ -58,6 +58,7 @@ apache:
       SSLCertificateFile: /etc/letsencrypt/live/docker-builds.sattler.io/fullchain.pem
       SSLCertificateKeyFile: /etc/letsencrypt/live/docker-builds.sattler.io/privkey.pem
       ProxyPass: http://127.0.0.1:8082/v2
+      LDAPGroup: cn=developer,ou=groups,dc=ldap,dc=sattler,dc=io
 
   modules:
     enabled:
