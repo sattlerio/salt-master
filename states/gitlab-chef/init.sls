@@ -20,3 +20,5 @@ install gitlab-ce:
     - installed
     - pkgs:
       - gitlab-ce
+    - require:
+      - cmd: download gitlab
