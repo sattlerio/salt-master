@@ -54,7 +54,7 @@ apache:
       template_file: salt://apache2/files/vhosts/special_docker-registry.conf
       interface: "*"
       ServerName: docker-builds.sattler.io
-      DocumentRoot: /var/www/docker-builds.sattler.io
+      DocumentRoot: /var/www/docker-builds.sattler.io/docker-registry-frontend
       SSLCertificateFile: /etc/letsencrypt/live/docker-builds.sattler.io/fullchain.pem
       SSLCertificateKeyFile: /etc/letsencrypt/live/docker-builds.sattler.io/privkey.pem
       ProxyPass: http://127.0.0.1:8082/v2
